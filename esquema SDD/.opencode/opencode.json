@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["./rules/rules.md"],
+  "agent": {
+    "orchestrator": {
+      "mode": "primary",
+      "description": "Coordinador SDD: orquesta las skills sdd-* y delega todo el trabajo pesado a subagentes via task",
+      "prompt": "{file:./rules/sdd-orchestrator.md}",
+      "permission": {
+        "task": {
+          "*": "allow"
+        },
+        "skill": {
+          "*": "allow"
+        }
+      }
+    }
+  }
+}
