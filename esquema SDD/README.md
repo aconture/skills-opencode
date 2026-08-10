@@ -5,11 +5,11 @@ Este repositorio utiliza una arquitectura de **Spec-Driven Development (SDD)** b
 El repositorio tiene dos funcionalidades:
 
 ## skills
-Skills globales para usar en Antigravity. Almacenando en el path correcto, también pueden usarse en otros agentes.
+Skills globales para usar en Opencode. Almacenando en el path correcto, también pueden usarse en otros agentes.
 
-## Antigravity Agent Teams
+## Opencode Agent Teams
 
-Esquema de agentes SDD que son invocados como skills, adaptado de https://github.com/Gentleman-Programming/agent-teams-lite.git para usar estrictamente en Antigravity (si querés algo agnóstico, andá al repo de agent-teams-lite)
+Esquema de agentes SDD que son invocados como skills, adaptado de https://github.com/Gentleman-Programming/agent-teams-lite.git para usar estrictamente en Opencode (si querés algo agnóstico, andá al repo de agent-teams-lite)
 
 ## Estructura de directorios:
 Ver README.md de este repositorio
