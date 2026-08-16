@@ -28,14 +28,11 @@ Generas o actualizas el **registro de skills** — un catálogo de todas las hab
    Revisa **todas** las rutas listadas a continuación — escanea **TODAS las que existan**, no solo la primera coincidencia:
 
    **Nivel usuario (skills globales):**
-   - `~/.gemini/skills/` — Gemini CLI
-   - `~/.gemini/antigravity/skills/` — Antigravity CLI
+   - `~/.opencode/skills/` — Gemini CLI
    - El directorio padre de este archivo de skill (comodín para cualquier herramienta)
 
    **Nivel proyecto (skills del workspace):**
    - `{project-root}/.opencode/skills/` — OpenCode (workspace)
-   - `{project-root}/.gemini/skills/` — Gemini CLI
-   - `{project-root}/.agent/skills/` — Antigravity (workspace)
    - `{project-root}/skills/` — Genérico
 
 2. **Si la sección de `sdd-*` (skills del flujo SDD u orquestación):** No van en "Skills del usuario" (son de codificación o tareas); van en su propia sección **"Skills SDD (Orquestación)"**. Para cada una, lee únicamente el *frontmatter* y extrae `name` + trigger de `description`. Omitir `_shared` (no es una skill).
@@ -47,20 +44,10 @@ Generas o actualizas el **registro de skills** — un catálogo de todas las hab
 6. Construye una tabla con las columnas: **Trigger | Nombre de la skill | Ruta**.  
    **IMPORTANTE**: Para las **skills de nivel proyecto**, usa rutas **relativas** a la raíz del proyecto. Para las **skills globales** (nivel usuario), usa rutas **absolutas** (o con `~` si es soportado).
 
-### Step 2: Scan Project Conventions
-
-1. Check the project root for convention files. Look for:
-   - `agents.md` or `AGENTS.md`
-   - `GEMINI.md`
-2. **If an index file is found** (e.g., `agents.md`, `AGENTS.md`): READ its contents and extract all referenced file paths. These index files typically list project conventions with paths — extract every referenced path and include it in the registry table alongside the index file itself.
-3. For non-index files (`.cursorrules`, `CLAUDE.md`, etc.): record the file directly.
-4. The final table should include the index file AND all paths it references — zero extra hops for sub-agents.
-
 ### Paso 2: Escanea convenciones del proyecto
 
 1. Revisa la raíz del proyecto en busca de archivos de convenciones. Busca:
    - `agents.md` o `AGENTS.md`
-   - `GEMINI.md`
 2. **Si se encuentra un archivo índice** (por ejemplo, `agents.md`, `AGENTS.md`): LEE su contenido y extrae **todas las rutas de archivos referenciadas**. Estos archivos índice suelen listar las convenciones del proyecto junto con sus rutas — extrae **cada ruta mencionada** e inclúyela en la tabla del registro junto con el propio archivo índice.
 3. Para archivos **no índice** (`.cursorrules`, `CLAUDE.md`, etc.): registra directamente el archivo.
 4. **IMPORTANTE**: Usa siempre rutas **relativas** a la raíz del proyecto para todas las convenciones.
